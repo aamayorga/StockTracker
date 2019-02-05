@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4B80E60A220A33310088E8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E609220A33310088E8A7 /* AppDelegate.swift */; };
-		4B80E60C220A33310088E8A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E60B220A33310088E8A7 /* ViewController.swift */; };
 		4B80E60F220A33310088E8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B80E60D220A33310088E8A7 /* Main.storyboard */; };
 		4B80E611220A33320088E8A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B80E610220A33320088E8A7 /* Assets.xcassets */; };
 		4B80E614220A33320088E8A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B80E612220A33320088E8A7 /* LaunchScreen.storyboard */; };
 		4B80E61F220A33330088E8A7 /* KrasamoStockTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E61E220A33330088E8A7 /* KrasamoStockTrackerTests.swift */; };
+		4B80E62A220A37C80088E8A7 /* StockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E629220A37C80088E8A7 /* StockTableViewController.swift */; };
+		4B80E62C220A38410088E8A7 /* StockTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E62B220A38410088E8A7 /* StockTrackerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,6 @@
 /* Begin PBXFileReference section */
 		4B80E606220A33310088E8A7 /* KrasamoStockTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrasamoStockTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B80E609220A33310088E8A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B80E60B220A33310088E8A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B80E60E220A33310088E8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B80E610220A33320088E8A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B80E613220A33320088E8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		4B80E61A220A33330088E8A7 /* KrasamoStockTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KrasamoStockTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B80E61E220A33330088E8A7 /* KrasamoStockTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrasamoStockTrackerTests.swift; sourceTree = "<group>"; };
 		4B80E620220A33330088E8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B80E629220A37C80088E8A7 /* StockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewController.swift; sourceTree = "<group>"; };
+		4B80E62B220A38410088E8A7 /* StockTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTrackerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				4B80E609220A33310088E8A7 /* AppDelegate.swift */,
-				4B80E60B220A33310088E8A7 /* ViewController.swift */,
+				4B80E629220A37C80088E8A7 /* StockTableViewController.swift */,
+				4B80E62B220A38410088E8A7 /* StockTrackerTableViewCell.swift */,
 				4B80E60D220A33310088E8A7 /* Main.storyboard */,
 				4B80E610220A33320088E8A7 /* Assets.xcassets */,
 				4B80E612220A33320088E8A7 /* LaunchScreen.storyboard */,
@@ -197,8 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B80E60C220A33310088E8A7 /* ViewController.swift in Sources */,
+				4B80E62A220A37C80088E8A7 /* StockTableViewController.swift in Sources */,
 				4B80E60A220A33310088E8A7 /* AppDelegate.swift in Sources */,
+				4B80E62C220A38410088E8A7 /* StockTrackerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
