@@ -29,6 +29,35 @@ class StockViewController: UIViewController {
         }
     }
     
+    @IBAction func showStockSymbolPopup(_ sender: UIBarButtonItem) {
+        configurePopup()
+    }
+    
+    @IBAction func dismissStockSymbolPopup(_ sender: UIButton) {
+        dismissPopup()
+    }
+    
+    fileprivate func configurePopup() {
+        stockPopupLabel.text = "New Stock Symbol"
+        dismissPopupButton.isEnabled = true
+        stockPopupTextField.isHidden = false
+        activityIndicator.stopAnimating()
+        
+        UIView.animate(withDuration: 0.3) {
+            self.stockSymbolPopupView.alpha = 1.0
+        }
+    }
+    
+    fileprivate func dismissPopup() {
+        stockPopupTextField.text = ""
+        dismissPopupButton.isEnabled = false
+        stockPopupTextField.resignFirstResponder()
+        
+        UIView.animate(withDuration: 0.3) {
+            self.stockSymbolPopupView.alpha = 0.0
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
