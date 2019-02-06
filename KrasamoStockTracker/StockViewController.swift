@@ -22,6 +22,12 @@ class StockViewController: UIViewController {
         
         let darkGray = UIColor.init(displayP3Red: 35.0/255.0, green: 31.0/255.0, blue: 32.0/255.0, alpha: 1.0)
         
+        stockSymbolPopupView.alpha = 0.0
+        dismissPopupButton.isEnabled = false
+        stockPopupTextField.delegate = self
+        stockPopupOkButton.layer.borderWidth = 1.0
+        stockPopupOkButton.layer.borderColor = UIColor.white.cgColor
+        
         navigationItem.title = "My Stocks"
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         navigationController?.navigationBar.barStyle = .black
