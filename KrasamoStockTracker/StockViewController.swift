@@ -20,7 +20,18 @@ class StockViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        let darkGray = UIColor.init(displayP3Red: 35.0/255.0, green: 31.0/255.0, blue: 32.0/255.0, alpha: 1.0)
         
+        navigationItem.title = "My Stocks"
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = darkGray
+        
+        view.backgroundColor = darkGray
         
     }
 }
