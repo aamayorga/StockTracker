@@ -41,13 +41,39 @@ class IEXClient {
                 return
             }
             
-            print(data)
+            self.convertData(data, completion: { (result, error) in
+                guard error == nil else {
+                    sendError("Error converting stock data into readable format.")
+                    return
+                }
+                
+                guard let quote = result  else {
+                    sendError("Couldn't convert stock data to readable format.")
+                    return
+                }
+                
+                completion(quote, nil)
+            })
         }
         
         urlTask.resume()
     }
     
-    
+    func convertData(_ data: Data, completion: (_ result: Quote?, _ error: NSError?) -> Void) {
+        
+        var quote: Quote
+        
+        do {
+            let decoder = JSONDecoder()
+            quote = try decoder.decode(Quote.self, from: data)
+        } catch {
+            let userInfo = [NSLocalizedDescriptionKey: "Could not parse the data into encodable format"]
+            completion(nil, NSError(domain: "convertData", code: 1, userInfo: userInfo))
+            return
+        }
+        
+        completion(quote, nil)
+    }
     
     func iexUrlWithUrlRequests(_ requests: [String]) -> URL? {
         var components = URLComponents()
