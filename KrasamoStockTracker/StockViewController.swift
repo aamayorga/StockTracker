@@ -9,7 +9,7 @@
 import UIKit
 
 class StockViewController: UIViewController {
-
+    
     let CELL_REUSE_IDENTIFIER = "stockCell"
     let USER_DEFAULT_KEY      = "stockUserDefaultsArray"
     
@@ -21,6 +21,7 @@ class StockViewController: UIViewController {
     @IBOutlet weak var stockPopupTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var refresher: UIRefreshControl!
     var stockQuotes: [Quote] = [] {
         didSet {
             stockTableView.reloadData()
@@ -157,6 +158,10 @@ class StockViewController: UIViewController {
         stockTableView.addSubview(refresher)
         
         refreshStocks()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
