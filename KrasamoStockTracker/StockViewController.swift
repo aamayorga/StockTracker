@@ -109,6 +109,21 @@ class StockViewController: UIViewController {
         }
     }
     
+    @objc fileprivate func refreshStocks() {
+        guard let stockArray = UserDefaults.standard.array(forKey: USER_DEFAULT_KEY) else {
+            print("No stock symbols in User Defaults")
+            return
+        }
+        
+        stockQuotes.removeAll()
+        
+        for symbol in stockArray as! [String] {
+            getStock(WithSymbol: symbol)
+        }
+        
+        refresher.endRefreshing()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -136,6 +151,12 @@ class StockViewController: UIViewController {
         
         view.backgroundColor = darkGray
         
+        refresher = UIRefreshControl()
+        refresher.tintColor = UIColor.white
+        refresher.addTarget(self, action: #selector(refreshStocks), for: .valueChanged)
+        stockTableView.addSubview(refresher)
+        
+        refreshStocks()
     }
 }
 
