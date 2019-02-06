@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Stock View Controller-->
+        <!--My Stocks-->
         <scene sceneID="LgC-Gz-8fs">
             <objects>
                 <viewController id="LCn-cc-Sap" customClass="StockViewController" customModule="KrasamoStockTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="16" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="stockCell" id="0cU-LT-kBw" customClass="StockCell" customModule="KrasamoStockTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="stockCell" id="0cU-LT-kBw" customClass="StockCell" customModule="KrasamoStockTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0cU-LT-kBw" id="Lff-3P-n6s">
@@ -129,26 +129,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6S-SG-vPK">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6S-SG-vPK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <connections>
                                     <action selector="dismissStockSymbolPopup:" destination="LCn-cc-Sap" eventType="touchUpInside" id="Htw-th-DTs"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sL0-eH-k7s" userLabel="New Stock Symbol Popup">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sL0-eH-k7s" userLabel="New Stock Symbol Popup">
                                 <rect key="frame" x="72.5" y="186.5" width="230" height="230"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nze-hj-YwO">
-                                        <rect key="frame" x="30" y="24" width="170" height="66.5"/>
+                                        <rect key="frame" x="30" y="24" width="170" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Stock Symbol" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N50-OA-YFX">
-                                                <rect key="frame" x="13" y="0.0" width="144.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="3" y="0.0" width="164" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-rb-MyI">
-                                                <rect key="frame" x="0.0" y="36.5" width="170" height="30"/>
+                                                <rect key="frame" x="0.0" y="40" width="170" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -218,7 +218,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lOY-tf-MmA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gfn-U4-WaY">
+                    <navigationItem key="navigationItem" title="My Stocks" id="gfn-U4-WaY">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Plus Symbol" id="AUn-6t-WUV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -232,7 +232,7 @@
                         <outlet property="stockPopupLabel" destination="N50-OA-YFX" id="QtT-dB-TBV"/>
                         <outlet property="stockPopupOkButton" destination="8qH-Qi-JHC" id="ady-NZ-0c5"/>
                         <outlet property="stockPopupTextField" destination="QUg-rb-MyI" id="fYB-BC-dAO"/>
-                        <outlet property="stockSymbolPopupView" destination="sL0-eH-k7s" id="nSr-Aa-o8g"/>
+                        <outlet property="stockSymbolPopupView" destination="sL0-eH-k7s" id="kvG-Xg-LbV"/>
                         <outlet property="stockTableView" destination="vQt-tQ-wPn" id="eI1-09-Afe"/>
                     </connections>
                 </viewController>

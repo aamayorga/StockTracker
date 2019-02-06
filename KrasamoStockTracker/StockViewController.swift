@@ -18,8 +18,7 @@ class StockViewController: UIViewController {
     @IBOutlet weak var stockPopupTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var refresher: UIRefreshControl!
-    
+    let refresher = UIRefreshControl()
     let dataSource = StockDataSource()
     let iexNetworkClient = IEXClient()
     
@@ -121,24 +120,20 @@ class StockViewController: UIViewController {
         stockTableView.backgroundColor = darkGray
         stockTableView.tableFooterView = UIView()
         
-        stockSymbolPopupView.alpha = 0.0
-        dismissPopupButton.isEnabled = false
         stockPopupTextField.delegate = self
         stockPopupOkButton.layer.borderWidth = 1.0
         stockPopupOkButton.layer.borderColor = UIColor.white.cgColor
         
-        navigationItem.title = "My Stocks"
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = darkGray
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = darkGray
-        
+    
         view.backgroundColor = darkGray
         
-        refresher = UIRefreshControl()
         refresher.tintColor = UIColor.white
         refresher.addTarget(self, action: #selector(refreshStocks), for: .valueChanged)
         stockTableView.addSubview(refresher)
