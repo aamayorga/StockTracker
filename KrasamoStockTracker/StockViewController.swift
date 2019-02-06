@@ -58,6 +58,57 @@ class StockViewController: UIViewController {
         }
     }
     
+    func showError(withMessage message: String) {
+        configurePopup()
+        stockPopupLabel.text = message
+        stockPopupTextField.isHidden = true
+    }
+    
+    @IBAction func addStockTracker(_ sender: UIBarButtonItem) {
+        guard let stockSymbol = stockPopupTextField.text else {
+            return
+        }
+        
+        // Check for duplicates
+        if let stockArray = UserDefaults.standard.array(forKey: USER_DEFAULT_KEY) {
+            for symbol in stockArray as! [String] {
+                if symbol.uppercased() == stockSymbol.uppercased() {
+                    dismissPopup()
+                    return
+                }
+            }
+        }
+        
+        if !stockSymbol.isEmpty {
+            getStock(WithSymbol: stockSymbol)
+        }
+        
+        if !stockPopupTextField.isHidden && !stockSymbol.isEmpty {
+            activityIndicator.startAnimating()
+        }
+        
+        dismissPopup()
+    }
+    
+    fileprivate func getStock(WithSymbol symbol: String) {
+        IEXClient().getQuote(ForSymbol: symbol) { (data, error) in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    self.showError(withMessage: error!.localizedDescription)
+                    return
+                }
+                
+                guard let quote = data else {
+                    self.showError(withMessage: "No stock data found.")
+                    return
+                }
+                
+                self.stockQuotes.append(quote)
+                self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
