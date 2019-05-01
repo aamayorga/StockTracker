@@ -17,6 +17,7 @@
 		4B80E638220A6B8A0088E8A7 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E637220A6B8A0088E8A7 /* Quote.swift */; };
 		4B80E63C220A6E100088E8A7 /* IEXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E63B220A6E100088E8A7 /* IEXClient.swift */; };
 		4B80E63E220AA2B80088E8A7 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E63D220AA2B80088E8A7 /* StockViewController.swift */; };
+		4B80E643220B74530088E8A7 /* StockDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80E642220B74530088E8A7 /* StockDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4B80E637220A6B8A0088E8A7 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		4B80E63B220A6E100088E8A7 /* IEXClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXClient.swift; sourceTree = "<group>"; };
 		4B80E63D220AA2B80088E8A7 /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		4B80E642220B74530088E8A7 /* StockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,14 +87,13 @@
 		4B80E608220A33310088E8A7 /* KrasamoStockTracker */ = {
 			isa = PBXGroup;
 			children = (
-				4B80E63F220AECEB0088E8A7 /* Views */,
+				4BD2415D220BB4B30052FD39 /* Storyboards */,
 				4B80E636220A6B7C0088E8A7 /* Models */,
+				4B80E63F220AECEB0088E8A7 /* Views */,
+				4BD2415C220BB47F0052FD39 /* Controllers */,
 				4B80E62D220A60CC0088E8A7 /* Network */,
 				4B80E609220A33310088E8A7 /* AppDelegate.swift */,
-				4B80E63D220AA2B80088E8A7 /* StockViewController.swift */,
-				4B80E60D220A33310088E8A7 /* Main.storyboard */,
 				4B80E610220A33320088E8A7 /* Assets.xcassets */,
-				4B80E612220A33320088E8A7 /* LaunchScreen.storyboard */,
 				4B80E615220A33320088E8A7 /* Info.plist */,
 			);
 			path = KrasamoStockTracker;
@@ -110,8 +111,8 @@
 		4B80E62D220A60CC0088E8A7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4B80E632220A6A090088E8A7 /* IEXConstants.swift */,
 				4B80E63B220A6E100088E8A7 /* IEXClient.swift */,
+				4B80E632220A6A090088E8A7 /* IEXConstants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -119,6 +120,7 @@
 		4B80E636220A6B7C0088E8A7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B80E642220B74530088E8A7 /* StockDataSource.swift */,
 				4B80E637220A6B8A0088E8A7 /* Quote.swift */,
 			);
 			path = Models;
@@ -130,6 +132,23 @@
 				4B80E62B220A38410088E8A7 /* StockCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4BD2415C220BB47F0052FD39 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B80E63D220AA2B80088E8A7 /* StockViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4BD2415D220BB4B30052FD39 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4B80E60D220A33310088E8A7 /* Main.storyboard */,
+				4B80E612220A33320088E8A7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +258,7 @@
 				4B80E633220A6A090088E8A7 /* IEXConstants.swift in Sources */,
 				4B80E638220A6B8A0088E8A7 /* Quote.swift in Sources */,
 				4B80E62C220A38410088E8A7 /* StockCell.swift in Sources */,
+				4B80E643220B74530088E8A7 /* StockDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
